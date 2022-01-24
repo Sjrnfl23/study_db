@@ -1,20 +1,44 @@
 
 
-show tables;
+create table cafe(
 
--- 테이블 생성
-create table member(
-seq int,
-name varchar(100),
-id varchar(100),
-regdate datetime
+cafename varchar(100),
+tablenumbers int,
+chairnumbers int,
+address varchar(100),
+area varchar(100),
+chief_name varchar(100)
 );
 
-create table member2(
-seq int,
-name varchar(100),
-id varchar(100),
-regdate datetime
-);
--- 테이블 삭제
-drop table member;
+
+insert into cafe(
+  seq
+  , cafename
+  , tablenumbers
+  , chairnumbers
+  , address
+  , area
+  , chief_name
+) values (
+  10
+  , '엔젤리너스'
+  , 23
+  , 36
+  , '서울시 강남구'
+  , 10
+  , '인병준'
+); 
+
+-- varchar는 '' 작은따옴표 필수
+-- int 는 사용 안해도 됨
+-- 콤마는 앞쪽을 선호 : 이건 호불호 갈림
+
+-- 데이터 조회
+select * from cafe;
+
+select* from cafe where seq=4 AND  area=6;
+
+select * from cafe where seq>=3;
+
+select * from cafe where cafename like "%기";
+-- 데이터 삭제
