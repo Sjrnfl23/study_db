@@ -46,8 +46,14 @@ insert into cafe(
 -- zf zerofill: 5.7 (5,2) -> 000.5.7
 -- AI : AUTO INCREMENT: 자동증가
 -- g : auto increment 의 다른 형태
+insert into test(
+name
+)values(
+'순형'
 
--- 테이블 수정 
+);
+
+
 -- 컬럼 추가
 alter table test add tel varchar(50);
 -- 컬럼 추가
@@ -56,4 +62,16 @@ alter table test drop tel;
 alter table test modify tel int;
 -- 컬럼 이름 변경 
 alter table test change tel tele int;
--- 데이터 삭제
+	-- 테이블 수정 
+update test set
+	name = 'Andrew',tel='222'
+where seq=1;
+-- 테이블 삭제
+delete from test
+where 1=1
+and seq=3;
+
+-- 전체 데이터 삭제
+truncate test;
+
+select * from test;	
